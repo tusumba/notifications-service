@@ -32,6 +32,9 @@ Python 3.12, FastAPI, SQLAlchemy 2 (async), Alembic, PostgreSQL 16, RabbitMQ (Fa
 
 ## Документация
 
+- [OpenAPI v1](docs/openapi.yaml) - API раздела «Уведомления» архитектуры.
+- [Модель данных](docs/data-model.md) - таблицы настроек, токенов устройств и уведомлений.
+
 Wiki проекта: https://ai.nsu.ru/projects/tusumba/wiki/Архитектура. Контракт API: OpenAPI v1 (#18893). Задачи ведутся в Redmine: https://ai.nsu.ru/projects/tusumba. Issues и Wiki GitHub выключены.
 
 ## Правила работы
