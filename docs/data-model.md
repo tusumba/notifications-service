@@ -23,7 +23,7 @@
 | id | uuid | PK |
 | user_id | uuid | |
 | platform | enum (android) | |
-| token | text | |
+| token | text | UNIQUE |
 
 ## notifications
 
@@ -50,7 +50,17 @@
 | GET /v1/me/notification-settings | Настройки push и email | Пользователь |
 | PUT /v1/me/notification-settings | Сохранение настроек push и email | Пользователь |
 | POST /v1/me/devices | Регистрация токена устройства | Пользователь |
-| DELETE /v1/me/devices/{id} | Удаление токена устройства | Пользователь |
+| DELETE /v1/me/devices/{id} | Удаление токена устройства | Владелец токена |
+
+## Коды ошибок
+
+Формат ошибки: `{"error": {"code": "...", "message": "..."}}`, для `validation_error` дополнительно `details`.
+
+| HTTP | code | Когда |
+|---|---|---|
+| 401 | unauthorized | Нет токена или токен недействителен |
+| 404 | device_not_found | Токена устройства нет или он принадлежит другому пользователю |
+| 422 | validation_error | Тело запроса не прошло проверку |
 
 ## Поведение по требованию #18119
 
