@@ -58,7 +58,9 @@
 
 | HTTP | code | Когда |
 |---|---|---|
-| 401 | unauthorized | Нет токена или токен недействителен |
+| 401 | not_authenticated | Нет заголовка Authorization (tusumba-common) |
+| 401 | token_expired | Срок действия access-токена истёк (tusumba-common) |
+| 401 | invalid_token | Токен недействителен или не access (tusumba-common) |
 | 404 | device_not_found | Токена устройства нет или он принадлежит другому пользователю |
 | 422 | validation_error | Тело запроса не прошло проверку |
 
